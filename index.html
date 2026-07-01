@@ -1,25 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Scuola Cinofila Rifugio</title>
-    <meta name="description" content="Scuola Cinofila Rifugio — built on Replit. Update this description to reflect the app." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Scuola Cinofila Rifugio" />
-    <meta property="og:description" content="Scuola Cinofila Rifugio — built on Replit. Update this description to reflect the app." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Scuola Cinofila Rifugio" />
-    <meta name="twitter:description" content="Scuola Cinofila Rifugio — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/webSiteAlRifugio/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/webSiteAlRifugio/assets/index-BI-2TdYL.js"></script>
-    <link rel="stylesheet" crossorigin href="/webSiteAlRifugio/assets/index-B39HRU1L.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scuola Cinofila Al Rifugio — Tezze sul Brenta (VI)</title>
+  <meta name="description" content="Educazione, addestramento e recupero comportamentale del cane a Tezze sul Brenta (VI). Scuola Cinofila Al Rifugio — centro ENCI." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Foglio di stile -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <!-- Logo -->
+      <button class="navbar-logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        <img src="logo.jpg" alt="Scuola Cinofila Al Rifugio" />
+        <span class="navbar-logo-testo">
+          Scuola Cinofila
+          <small class="navbar-logo-sub">Al Rifugio · Tezze sul Brenta</small>
+        </span>
+      </button>
+
+      <!-- Link desktop -->
+      <ul class="navbar-links">
+        <li><button onclick="scorri('chi-siamo')">Chi siamo</button></li>
+        <li><button onclick="scorri('servizi')">Servizi</button></li>
+        <li><button onclick="scorri('sport')">Sport</button></li>
+        <li><button onclick="scorri('galleria')">Galleria</button></li>
+        <li><button onclick="scorri('contatti')">Contatti</button></li>
+        <li><button class="btn-contattaci" onclick="scorri('contatti')">Contattaci</button></li>
+      </ul>
+
+      <!-- Hamburger mobile -->
+      <button class="navbar-hamburger" id="hamburger" aria-label="Apri menu">
+        <span id="icona-hamburger">☰</span>
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <div class="menu-mobile" id="menu-mobile">
+      <button onclick="scorri('chi-siamo')">Chi siamo</button>
+      <button onclick="scorri('servizi')">Servizi</button>
+      <button onclick="scorri('sport')">Sport</button>
+      <button onclick="scorri('galleria')">Galleria</button>
+      <button onclick="scorri('contatti')">Contatti</button>
+      <button class="btn-contattaci-mobile" onclick="scorri('contatti')">Contattaci</button>
+    </div>
+  </nav>
+
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="foto01.jpg" alt="Campo di addestramento cinofilo" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">Tezze sul Brenta · Vicenza</div>
+
+      <h1 class="hero-titolo serif">
+        Scuola Cinofila<br />al Rifugio
+      </h1>
+
+      <p class="hero-sottotitolo">
+        Dove la realtà viene prima del marketing
+      </p>
+
+      <p class="hero-desc">
+        Educazione, addestramento e recupero comportamentale del cane.
+        Lavoro serio, concreto, su misura — perché ogni cane e ogni famiglia sono unici.
+      </p>
+
+      <div class="hero-bottoni">
+        <button class="btn-primario" onclick="scorri('contatti')">
+          Prenota una consulenza
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <button class="btn-secondario" onclick="scorri('servizi')">
+          Scopri i servizi
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       STRISCIA TAGLINE
+       ===================================================== -->
+  <div class="tagline-strip">
+    <p>
+      "La vita vera si siede a tavola. Il marketing sta nel virtuale.
+      La Scuola Cinofila Al Rifugio sceglie la realtà."
+    </p>
+  </div>
+
+
+  <!-- =====================================================
+       CHI SIAMO
+       ===================================================== -->
+  <section id="chi-siamo" class="chi-siamo">
+    <div class="container">
+      <div class="chi-siamo-griglia">
+
+        <!-- Testo -->
+        <div class="chi-siamo-testo">
+          <p class="etichetta">Chi siamo</p>
+          <h2 class="titolo-sezione serif">
+            Una scuola nata dalla passione,<br />costruita sulla realtà
+          </h2>
+          <p class="intro">
+            La Scuola Cinofila Al Rifugio nasce a Tezze sul Brenta con un'idea semplice:
+            lavorare bene, con rispetto per il cane e concretezza con il proprietario.
+            Niente show, niente promesse facili.
+          </p>
+
+          <div class="punti">
+            <div class="punto">
+              <div class="punto-pallino"></div>
+              <div>
+                <h4>Ogni binomio è unico</h4>
+                <p>Nessun programma preconfezionato. Ascoltiamo prima di intervenire, costruiamo percorsi su misura.</p>
+              </div>
+            </div>
+            <div class="punto">
+              <div class="punto-pallino"></div>
+              <div>
+                <h4>Metodo rispettoso e moderno</h4>
+                <p>Approccio etico al benessere animale, aggiornato e basato sulla conoscenza del comportamento canino.</p>
+              </div>
+            </div>
+            <div class="punto">
+              <div class="punto-pallino"></div>
+              <div>
+                <h4>Referente ENCI del territorio</h4>
+                <p>Sede di stage e corsi pratici a livello nazionale, punto di riferimento per addestratori e proprietari.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foto -->
+        <div class="foto-griglia">
+          <div class="foto-sinistra">
+            <img src="foto03.jpg" alt="Educatrice con cane" />
+          </div>
+          <div class="foto-destra">
+            <div class="foto-item">
+              <img src="foto04.jpg" alt="Addestramento cani" />
+            </div>
+            <div class="foto-item">
+              <img src="foto05.jpg" alt="Conduttore con chow chow" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       SERVIZI
+       ===================================================== -->
+  <section id="servizi" class="servizi">
+    <div class="container">
+      <p class="etichetta">Cosa facciamo</p>
+      <h2 class="titolo-sezione serif">I nostri servizi</h2>
+      <p class="servizi-intro">
+        Dal cucciolo al cane adulto, dall'educazione di base al recupero comportamentale complesso.
+        Un percorso per ogni esigenza.
+      </p>
+
+      <div class="servizi-griglia">
+
+        <div class="card-servizio">
+          <div class="card-servizio-foto">
+            <img src="foto06.jpg" alt="Educazione di base" />
+          </div>
+          <div class="card-servizio-corpo">
+            <div class="card-servizio-icona">🐕</div>
+            <h3>Educazione di base</h3>
+            <p>Fondamentali per vivere insieme in armonia: comandi, gestione al guinzaglio, socializzazione con uomini e altri cani.</p>
+          </div>
+        </div>
+
+        <div class="card-servizio">
+          <div class="card-servizio-foto">
+            <img src="foto07.jpg" alt="Addestramento avanzato" />
+          </div>
+          <div class="card-servizio-corpo">
+            <div class="card-servizio-icona">🎓</div>
+            <h3>Addestramento avanzato</h3>
+            <p>Per cani già educati che vogliono approfondire l'obbedienza, la precisione nei comandi e la relazione con il conduttore.</p>
+          </div>
+        </div>
+
+        <div class="card-servizio">
+          <div class="card-servizio-foto">
+            <img src="foto08.jpg" alt="Recupero comportamentale" />
+          </div>
+          <div class="card-servizio-corpo">
+            <div class="card-servizio-icona">🧠</div>
+            <h3>Recupero comportamentale</h3>
+            <p>Gestione professionale di aggressività, reattività, paure, ansie da separazione e problemi comportamentali complessi.</p>
+          </div>
+        </div>
+
+        <div class="card-servizio">
+          <div class="card-servizio-foto">
+            <img src="foto09.jpg" alt="Discipline sportive" />
+          </div>
+          <div class="card-servizio-corpo">
+            <div class="card-servizio-icona">🏆</div>
+            <h3>Discipline sportive</h3>
+            <p>Percorsi per chi vuole cimentarsi nello sport cinofilo: agility, obedience, rally, ricerca olfattiva e molto altro.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       SPORT CINOFILI
+       ===================================================== -->
+  <section id="sport" class="sport">
+    <div class="container">
+      <div class="sport-griglia">
+
+        <!-- Foto -->
+        <div class="sport-foto">
+          <img src="foto10.jpg" alt="Sport cinofili al campo" />
+        </div>
+
+        <!-- Testo + lista -->
+        <div>
+          <p class="etichetta">Sport cinofili</p>
+          <h2 class="titolo-sezione serif">Discipline praticate</h2>
+          <p class="sport-intro">
+            Lo sport cinofilo rafforza il legame tra cane e proprietario e stimola
+            mente e corpo dell'animale. Alla Scuola Al Rifugio puoi scoprire e praticare:
+          </p>
+
+          <div class="lista-sport">
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">01</span>
+              <span>Obbedienza sportiva</span>
+            </div>
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">02</span>
+              <span>Agility — percorsi di agilità su ostacoli</span>
+            </div>
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">03</span>
+              <span>Morso ludico sportivo con figurante</span>
+            </div>
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">04</span>
+              <span>Rally Obedience</span>
+            </div>
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">05</span>
+              <span>Detection</span>
+            </div>
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">06</span>
+              <span>Lavoro su pista / tracking</span>
+            </div>
+            <div class="lista-sport-item">
+              <span class="lista-sport-num">07</span>
+              <span>Allenamenti collettivi — gare e stage</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       GALLERIA
+       ===================================================== -->
+  <section id="galleria" class="galleria">
+    <div class="container galleria-header">
+      <p class="etichetta">Galleria</p>
+      <h2 class="titolo-sezione serif">Momenti dal campo</h2>
+      <p class="intro">
+        Foto dalla nostra attività quotidiana — lezioni, sport e tanta passione a sei zampe.
+      </p>
+    </div>
+
+    <!-- Prima riga -->
+    <div class="galleria-griglia">
+      <div class="galleria-item"><img src="foto06.jpg" alt="Galleria 1" /></div>
+      <div class="galleria-item"><img src="foto01.jpg" alt="Galleria 2" /></div>
+      <div class="galleria-item"><img src="foto11.jpg" alt="Galleria 3" /></div>
+      <div class="galleria-item"><img src="foto09.jpg" alt="Galleria 4" /></div>
+    </div>
+
+    <!-- Seconda riga -->
+    <div class="galleria-griglia">
+      <div class="galleria-item"><img src="foto14.jpg" alt="Galleria 5" /></div>
+      <div class="galleria-item"><img src="foto13.jpg" alt="Galleria 6" /></div>
+      <div class="galleria-item"><img src="foto04.jpg" alt="Galleria 7" /></div>
+      <div class="galleria-item"><img src="foto12.jpg" alt="Galleria 8" /></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FILOSOFIA
+       ===================================================== -->
+  <section class="filosofia">
+    <div class="container">
+      <p class="etichetta">La nostra filosofia</p>
+      <h2 class="titolo-sezione serif">Perché scegliere Al Rifugio</h2>
+      <p class="filosofia-intro">
+        Non vendiamo sogni né promesse. Offriamo lavoro serio, rispettoso, su misura.
+      </p>
+
+      <div class="card-filosofia-griglia">
+
+        <div class="card-filosofia">
+          <div class="card-filosofia-num serif">01</div>
+          <h4>Realtà, non marketing</h4>
+          <p>I risultati si vedono nella vita quotidiana, non nelle clip sui social. Lavoriamo in campo, non davanti a una telecamera.</p>
+        </div>
+
+        <div class="card-filosofia">
+          <div class="card-filosofia-num serif">02</div>
+          <h4>Ascolto prima di tutto</h4>
+          <p>Ogni percorso inizia dall'osservazione del cane e dal dialogo con la famiglia. Solo allora costruiamo il piano di lavoro.</p>
+        </div>
+
+        <div class="card-filosofia">
+          <div class="card-filosofia-num serif">03</div>
+          <h4>Metodo etico e moderno</h4>
+          <p>Rispettiamo i tempi e le emozioni del cane. Nessuna coercizione: efficacia e benessere non sono in conflitto.</p>
+        </div>
+
+        <div class="card-filosofia">
+          <div class="card-filosofia-num serif">04</div>
+          <h4>Formazione continua</h4>
+          <p>Sede di stage pratici ENCI e aggiornamenti nazionali. Cresciamo insieme ai professionisti del settore.</p>
+        </div>
+
+      </div>
+
+      <!-- Statistiche -->
+      <div class="stats-griglia">
+        <div class="stat-item">
+          <div class="stat-num serif">2.6k+</div>
+          <div class="stat-label">Follower Facebook</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num serif">Vicenza</div>
+          <div class="stat-label">Tezze sul Brenta (VI)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num serif">ENCI</div>
+          <div class="stat-label">Centro riconosciuto</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       CITAZIONE
+       ===================================================== -->
+  <div class="citazione">
+    <blockquote>
+      "La vita vera si siede a tavola. Il marketing sta nel virtuale.<br />
+      Noi scegliamo la realtà."
+    </blockquote>
+    <cite>— Scuola Cinofila Al Rifugio, Tezze sul Brenta</cite>
+  </div>
+
+
+  <!-- =====================================================
+       IL LAVORO VERO
+       ===================================================== -->
+  <section class="lavoro">
+    <div class="container">
+      <p class="etichetta">Ogni giorno al rifugio</p>
+      <h2 class="titolo-sezione serif">Il lavoro vero</h2>
+      <p class="lavoro-intro">
+        Ogni mattina, qualunque sia il meteo, siamo qui. Con ogni cane, con ogni storia,
+        con la stessa passione del primo giorno.
+      </p>
+
+      <div class="lavoro-griglia">
+        <div class="lavoro-item"><img src="foto08.jpg" alt="Lavoro quotidiano 1" /></div>
+        <div class="lavoro-item"><img src="foto05.jpg" alt="Lavoro quotidiano 2" /></div>
+        <div class="lavoro-item"><img src="foto12.jpg" alt="Lavoro quotidiano 3" /></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       CONTATTI
+       ===================================================== -->
+  <section id="contatti" class="contatti">
+    <div class="container">
+      <p class="etichetta">Dove siamo</p>
+      <h2 class="titolo-sezione serif">Contatti</h2>
+      <p class="contatti-intro">
+        Siamo a Tezze sul Brenta, in provincia di Vicenza.
+        Scrivici o chiamaci per fissare un primo incontro di valutazione gratuita.
+      </p>
+
+      <div class="contatti-griglia">
+
+        <!-- Colonna sinistra: dati + social -->
+        <div>
+          <div class="scheda-contatti">
+            <div class="contatto-riga">
+              <div class="contatto-icona">📍</div>
+              <div>
+                <div class="contatto-label">Indirizzo</div>
+                <div class="contatto-valore">Via Tre Case 32 — Tezze sul Brenta (VI)</div>
+              </div>
+            </div>
+            <div class="contatto-riga">
+              <div class="contatto-icona">📱</div>
+              <div>
+                <div class="contatto-label">Telefono / WhatsApp</div>
+                <div class="contatto-valore">
+                  <a href="tel:+393491379138">+39 349 137 9138</a>
+                </div>
+              </div>
+            </div>
+            <div class="contatto-riga">
+              <div class="contatto-icona">✉️</div>
+              <div>
+                <div class="contatto-label">Email</div>
+                <div class="contatto-valore">
+                  <a href="mailto:scuolacinofila.alrifugio@gmail.com">scuolacinofila.alrifugio@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/scuolacinofilarifugio" target="_blank" rel="noopener noreferrer" class="btn-facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Seguici su Facebook
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/scuolacinofila_alrifugio/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+            Seguici su Instagram
+          </a>
+        </div>
+
+        <!-- Colonna destra: mappa -->
+        <div>
+          <div class="mappa-wrap">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=11.693%2C45.656%2C11.733%2C45.690&layer=mapnik&marker=45.673%2C11.713"
+              title="Mappa Tezze sul Brenta - Scuola Cinofila Al Rifugio"
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/search/Via+Tre+Case+32+Tezze+sul+Brenta+Vicenza"
+            target="_blank" rel="noopener noreferrer"
+            class="btn-maps"
+          >
+            📍 Apri in Google Maps
+          </a>
+
+          <p class="mappa-nota">
+            Facilmente raggiungibile dall'asse Vicenza–Bassano del Grappa (SS47).
+            Ampio spazio all'aperto per le lezioni pratiche.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="Logo Scuola Cinofila Al Rifugio" />
+      <span>Scuola Cinofila Al Rifugio</span>
+    </div>
+
+    <p>Via Tre Case 32 — Tezze sul Brenta (VI)</p>
+    <p>
+      📱 <a href="tel:+393491379138">+39 349 137 9138</a>
+      &nbsp;·&nbsp;
+      ✉️ <a href="mailto:scuolacinofila.alrifugio@gmail.com">scuolacinofila.alrifugio@gmail.com</a>
+    </p>
+
+    <div class="footer-social">
+      <a href="https://www.facebook.com/scuolacinofilarifugio" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <span>·</span>
+      <a href="https://www.instagram.com/scuolacinofila_alrifugio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+
+    <p class="footer-copy">
+      © <span id="anno"></span> Scuola Cinofila Al Rifugio · Tutti i diritti riservati
+    </p>
+  </footer>
+
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
 </html>
