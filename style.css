@@ -481,17 +481,9 @@ button {
 }
 
 .foto-griglia .foto-sinistra {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 2/3;
-}
-
-.foto-griglia .foto-sinistra img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .foto-griglia .foto-destra {
@@ -500,11 +492,13 @@ button {
   gap: 12px;
 }
 
+.foto-sinistra .foto-item,
 .foto-destra .foto-item {
   border-radius: 16px;
   overflow: hidden;
 }
 
+.foto-sinistra .foto-item img,
 .foto-destra .foto-item img {
   width: 100%;
   height: auto;
@@ -706,6 +700,7 @@ button {
   border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 4/3;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .galleria-item img {
@@ -714,6 +709,10 @@ button {
   object-fit: cover;
   object-position: top;
   transition: transform 0.5s;
+}
+
+.galleria-item--contain img {
+  object-fit: contain;
 }
 
 .galleria-item img:hover {
