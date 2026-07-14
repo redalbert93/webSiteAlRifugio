@@ -447,6 +447,54 @@ button {
 
 .punti { display: flex; flex-direction: column; gap: 20px; }
 
+/* ── Chi siamo: blocchi testo ── */
+.chi-siamo-blocco {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.chi-siamo-blocco p {
+  font-size: 0.9rem;
+  color: var(--testo-chiaro);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.chi-siamo-sottotitolo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--testo);
+  margin: 0 0 4px;
+}
+
+.chi-siamo-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chi-siamo-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--testo-chiaro);
+  line-height: 1.6;
+}
+
+.chi-siamo-lista li span {
+  color: var(--verde);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
 .punto {
   display: flex;
   gap: 16px;
@@ -590,6 +638,55 @@ button {
   font-size: 14px;
   color: var(--testo-chiaro);
   line-height: 1.6;
+}
+
+/* ── In dettaglio ── */
+.servizi-dettaglio {
+  margin-top: 56px;
+  background: var(--card, #fff);
+  border: 1px solid var(--bordo, #e5e7eb);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.servizi-dettaglio h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--testo);
+}
+
+.servizi-dettaglio-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 640px) {
+  .servizi-dettaglio-lista { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+}
+
+.servizi-dettaglio-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--testo-chiaro);
+  line-height: 1.6;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.servizi-dettaglio-lista li:last-child { border-bottom: none; }
+
+.servizi-dettaglio-lista li span {
+  color: var(--verde);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* =========================================================
