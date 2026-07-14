@@ -1080,6 +1080,23 @@ button {
 
 .btn-instagram:hover { opacity: 0.90; }
 
+.btn-tiktok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #010101;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+.btn-tiktok:hover { background: #222; }
+
 /* Mappa */
 .mappa-wrap {
   border-radius: 24px;
